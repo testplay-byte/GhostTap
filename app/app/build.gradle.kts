@@ -46,12 +46,12 @@ android {
     buildFeatures {
         compose = true
     }
-}
 
-lint {
-    // Vital lint OOMs the CI Gradle heap during release builds;
-    // run lint explicitly when needed instead
-    checkReleaseBuilds = false
+    lint {
+        // Vital lint OOMs the CI Gradle heap during release builds;
+        // run lint explicitly when needed instead
+        checkReleaseBuilds = false
+    }
 }
 
 dependencies {
