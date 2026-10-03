@@ -1,0 +1,18 @@
+# Line endings — keep gradlew scripts executable & LF on all platforms
+gradlew text eol=lf
+*.bat text eol=crlf
+gradlew.bat text eol=crlf
+
+# Source
+*.kt text
+*.kts text
+*.c text
+*.h text
+*.md text
+*.xml text
+*.json text
+
+# Binaries
+*.webp binary
+*.png binary
+*.jar binary
