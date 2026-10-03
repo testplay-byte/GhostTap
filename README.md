@@ -5,8 +5,8 @@
 
 GhostTap pairs an ESP32-C3 running custom ESP-IDF firmware with a Jetpack
 Compose Android app. The phone is the command center: scan networks, launch
-authorized attacks, capture handshakes to .pcap/.hccapx, and have fun with a
-clock, music visualizer, snake game and AI-generated OLED animations.
+authorized attacks, capture handshakes to .pcap/.hccapx — and have fun with a
+clock, music visualizer, drawing canvas and AI-generated OLED animations.
 
 ```
 ┌──────────────────┐    BLE     ┌──────────────────┐
@@ -14,6 +14,18 @@ clock, music visualizer, snake game and AI-generated OLED animations.
 │  dashboard + AI  │            │  attacks + OLED  │
 └──────────────────┘            └──────────────────┘
 ```
+
+## 🖼️ Screens & hardware
+
+| ✏️ Draw | 📝 Text | 🎵 Music Viz | 🔌 Hardware |
+|---|---|---|---|
+| <img src="https://github.com/user-attachments/assets/189ab1d9-48c4-4bf0-8555-d0a3f908bec5" width="180"> | <img src="https://github.com/user-attachments/assets/bc7bd3b1-a5cb-4d1d-ba30-d6963b0b6dd9" width="180"> | <img src="https://github.com/user-attachments/assets/c1dce5f3-f780-48e9-b0b0-851c0f3c3d2f" width="180"> | <img src="https://github.com/user-attachments/assets/ad62578a-57f6-4b7e-af05-d429533985c2" width="180"> |
+| Pixel canvas with stroke size, shapes & eraser — mirrored live on the OLED | Giant scrolling text with size, animation & effects | Audio-reactive visualizers: Classic Bars, Fluid Wave, Peak Meter | ESP32-C3 + SSD1306 OLED over I2C (SDA 5, SCL 6) |
+
+The app keeps a live **OLED simulator** at the top of every screen, so what
+you see is exactly what the device shows — plus **AI mode**: type a prompt,
+Gemini writes the animation, preview it on the phone, then stream it to the
+device.
 
 ---
 
@@ -39,8 +51,10 @@ your own gear.
 
 1. **Flash the firmware** — see [`docs/guides/BUILD.md`](docs/guides/BUILD.md)
    (ESP-IDF, `idf.py build flash`; OLED on SDA=GPIO5/SCL=GPIO6).
-2. **Install the app** — build the APK (`./gradlew assembleDebug`) or grab one
-   from Releases once CI is live.
+2. **Install the app** — grab the signed
+   [app-release.apk](https://github.com/testplay-byte/GhostTap/releases/download/latest/app-release.apk)
+   from Releases, or build it with CI (`./gradlew assembleDebug` runs on
+   GitHub Actions).
 3. **Pair** — the device advertises as **GhostTap**; connect from the app's
    Scan screen.
 4. **Play** — Control tab for clock/snake/AI animations, Hacker tab for
@@ -68,9 +82,14 @@ your own gear.
 ## 🗺️ Status
 
 - ✅ Feature-complete two-part tool (firmware + app), refined layout & docs
-- ⏳ GitHub Actions CI (firmware + APK builds) — added in the GitHub phase
-- ⏳ Repo publish — pending repo details
+- ✅ CI: firmware builds + signed APKs on every push ([Releases](https://github.com/testplay-byte/GhostTap/releases))
+- ⏳ Backlog: ViewModels split, scoped-storage tightening
 
 ## 📄 License
 
 Not decided yet (see `docs/HISTORY.md` roadmap).
+
+---
+
+*Screenshots courtesy of the original
+[ESPOLED_APP](https://github.com/Confused-Creature-180/ESPOLED_APP) preview.*
