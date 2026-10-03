@@ -516,7 +516,7 @@ fun TextControl(
 }
 
 @Composable
-private fun LabelWithIcon(icon: ImageVector, label: String) {
+internal fun LabelWithIcon(icon: ImageVector, label: String) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         Icon(icon, null, modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.primary)
         Text(

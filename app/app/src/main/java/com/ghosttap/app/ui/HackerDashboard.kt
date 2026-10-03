@@ -48,6 +48,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import com.ghosttap.app.BleManager
 import kotlinx.coroutines.delay
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
 fun HackerDashboard(
     bleManager: BleManager,
     onAttackStateChange: (Boolean) -> Unit,

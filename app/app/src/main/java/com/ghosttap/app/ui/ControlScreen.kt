@@ -182,6 +182,8 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material.icons.filled.BluetoothConnected
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Edit
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun ControlScreen(bleManager: BleManager, onDisconnect: () -> Unit, onHackerMode: () -> Unit) {
     val connectionState by bleManager.connectionState.collectAsState()
     val statusMessage by bleManager.statusMessage.collectAsState()

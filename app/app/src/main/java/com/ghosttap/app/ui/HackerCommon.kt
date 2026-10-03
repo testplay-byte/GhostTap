@@ -48,6 +48,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import com.ghosttap.app.BleManager
 import kotlinx.coroutines.delay
+@Composable
 fun ActionCard(title: String, icon: androidx.compose.ui.graphics.vector.ImageVector, color: Color, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Card(
         modifier = modifier.height(120.dp),

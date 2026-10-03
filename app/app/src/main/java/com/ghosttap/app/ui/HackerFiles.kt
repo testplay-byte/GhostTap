@@ -48,6 +48,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import com.ghosttap.app.BleManager
 import kotlinx.coroutines.delay
+@Composable
 fun HackerFiles(bleManager: BleManager) {
     val clipboardManager = LocalClipboardManager.current
     val context = LocalContext.current
