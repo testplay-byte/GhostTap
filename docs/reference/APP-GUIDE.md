@@ -13,18 +13,31 @@ minSdk 31 / targetSdk 36 · Gemini via OkHttp + Gson.
 
 ```
 app/app/src/main/java/com/ghosttap/app/
-├── MainActivity.kt          # Navigation host (158 lines)
-├── BleManager.kt            # BLE singleton (876 lines)
+├── MainActivity.kt               # Navigation host
+├── BleManager.kt                 # BLE singleton: scan/connect/queue/notifications
 ├── data/
-│   └── GeminiService.kt    # Gemini API client (103 lines)
+│   └── GeminiService.kt          # Gemini API client
 ├── logic/
-│   └── AnimationScriptEngine.kt  # Script interpreter (215 lines)
+│   └── AnimationScriptEngine.kt  # Script interpreter
 └── ui/
-    ├── ScanScreen.kt        # Device discovery (374 lines)
-    ├── ControlScreen.kt     # Normal mode hub (4,020 lines)
-    ├── HackerModeScreen.kt  # Attack dashboard (2,685 lines)
-    ├── AdvHandshakeScreen.kt# Handshake detail (590 lines)
-    └── theme/               # Color / Theme / Type
+    ├── ScanScreen.kt             # Device discovery
+    ├── AdvHandshakeScreen.kt     # Handshake capture detail
+    ├── theme/                    # Color / Theme / Type
+    ├── Control*.kt               # Normal mode, split by concern:
+    │   ├── ControlScreen.kt      #   main screen composable
+    │   ├── ControlSettings.kt    #   DeviceCommand sealed class, settings, slider
+    │   ├── ControlCanvas.kt      #   drawing canvas + bitmap rendering
+    │   ├── ControlSimulator.kt   #   OLED simulator preview
+    │   ├── ControlWidgets.kt     #   TextControl and small widgets
+    │   └── ControlExtras.kt      #   extras screen, clock/viz/snake items
+    └── Hacker*.kt                # Hacker mode, split by concern:
+        ├── HackerModeScreen.kt   #   screen shell + temperature bubble + settings
+        ├── HackerTheme.kt        #   hacker palette colors
+        ├── HackerDashboard.kt    #   attack selection dashboard
+        ├── HackerHandshake.kt    #   handshake running + results screens
+        ├── HackerScanner.kt      #   network scanner + detail cards
+        ├── HackerFiles.kt        #   capture file manager + beacon SSID settings
+        └── HackerCommon.kt       #   shared cards, signal bars
 ```
 
 ## Key singletons & flows

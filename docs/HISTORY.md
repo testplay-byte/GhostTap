@@ -27,7 +27,9 @@ Nothing was removed functionally — every feature is preserved.
 
 ## Roadmap
 
-- [ ] Split mega-screens (ControlScreen 4,020 lines → smaller composables + ViewModels)
+- [x] Split mega-screens (2026-10-04): ControlScreen 4,020 lines → 6 files by
+  concern; HackerModeScreen 2,685 lines → 7 files. Declaration-parity verified
+  against the original (20 + 24 top-level symbols, no additions, no losses).
 - [ ] GitHub Actions workflows: ESP-IDF firmware build + Android APK builds
 - [ ] Signing config for release APKs
 - [ ] Tighten storage permissions to scoped storage
