@@ -355,4 +355,3 @@ fun HackerSettings(onBack: () -> Unit) {
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
