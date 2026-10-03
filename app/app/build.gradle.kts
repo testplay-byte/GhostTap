@@ -26,6 +26,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // CI-only vital lint OOMs the 1 GiB Gradle heap on this codebase;
+            // full lint runs locally/as a dedicated task, not during builds
+            isLintVitalEnabled = false
         }
         debug {
             isMinifyEnabled = false
